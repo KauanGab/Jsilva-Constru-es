@@ -30,7 +30,7 @@ Este projeto foi criado para a empresa do meu pai e também visa ser um modelo *
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
-### Backend (opcional)
+### Backend 
 
 - [Laravel](https://laravel.com/)
 
