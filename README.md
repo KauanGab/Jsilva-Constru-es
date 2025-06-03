@@ -32,10 +32,9 @@ Este projeto foi criado para a empresa do meu pai e também visa ser um modelo *
 
 ### Backend (opcional)
 
-- [Laravel](https://laravel.com/) (para gerenciamento de conteúdo via painel)
-- ou [Firebase](https://firebase.google.com/) (para projetos simples)
+- [Laravel](https://laravel.com/)
 
 ### Hospedagem
 
 - Frontend: [Netlify](https://netlify.com/)
-- Backend: [Render](https://render.com/) ou [Hostinger](https://hostinger.com.br/)
+- Backend: [Render](https://render.com/)
