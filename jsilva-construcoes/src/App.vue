@@ -1,13 +1,7 @@
-<!-- src/App.vue -->
 <template>
-  <Navbar />
-
-  <main class="p-4">
-    <RouterView />
-  </main>
+  <Home />
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router'
-import Navbar from './components/Navbar.vue'
+import Home from './pages/Home.vue'
 </script>
