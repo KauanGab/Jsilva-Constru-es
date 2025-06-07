@@ -4,6 +4,9 @@
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary: #1E3A8A;
+  --second: #F97316;
+  --third: #4a527a;
 }
 
 body{
