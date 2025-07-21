@@ -1,18 +1,123 @@
 <template>
-  <section class="bg-gradient-to-br from-blue-100 to-white py-24 px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-blue-800 leading-tight mb-6">
-        Bem-vindo à Jsilva Construções
-      </h1>
-      <p class="text-xl md:text-2xl text-gray-700 mb-10">
-        Transformamos ideias em realidade com excelência, confiança e qualidade em cada detalhe.
-      </p>
-      <a
-        href="#servicos"
-        class="inline-block bg-blue-700 text-white text-lg md:text-xl font-medium px-10 py-4 rounded-full shadow-lg hover:bg-blue-800 transition duration-300"
-      >
-        Conheça nossos serviços
-      </a>
+  <section class="relative min-h-screen">
+    <div
+      class="relative h-96 bg-cover bg-center bg-no-repeat"
+      style="background-image: linear-gradient(rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.8)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"
+    >
+      <div class="absolute inset-0 flex items-center justify-start px-6 md:px-12">
+        <div class="max-w-2xl text-white">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            Transformando projetos em realidade
+          </h1>
+          <p class="text-lg md:text-xl mb-8 opacity-90">
+            Oferecemos as mais completas e eficientes soluções
+          </p>
+          <button
+            class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-md transition duration-300 uppercase tracking-wide"
+          >
+            Solicite um orçamento
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg
+                  class="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Construção</h3>
+              <p class="text-gray-600 text-sm">
+                Construção desde aplicação personalizada
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg
+                  class="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Reforma</h3>
+              <p class="text-gray-600 text-sm">
+                Saber quem, quando, como sempre
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg
+                  class="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Gerenciamento</h3>
+              <p class="text-gray-600 text-sm">
+                Solicitação, acompanhe suas metas
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  name: 'Inicio',
+}
+</script>
+
+<style scoped>
+</style>
