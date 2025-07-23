@@ -1,8 +1,8 @@
 <template>
   <section class="relative min-h-screen">
     <div
-      class="relative h-96 bg-cover bg-center bg-no-repeat"
-      style="background-image: linear-gradient(rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.8)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"
+      class="relative h-[60vh] md:h-[70vh] bg-cover bg-center bg-no-repeat"
+      :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(\'${backgroundImage}\');`"
     >
       <div class="absolute inset-0 flex items-center justify-start px-6 md:px-12">
         <div class="max-w-2xl text-white">
@@ -114,9 +114,16 @@
 </template>
 
 <script>
+import posto1 from "../assets/posto1.png";
+
 export default {
-  name: 'Inicio',
-}
+  name: "Inicio",
+  data() {
+    return {
+      backgroundImage: posto1,
+    };
+  },
+};
 </script>
 
 <style scoped>
