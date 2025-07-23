@@ -12,7 +12,7 @@ import SectionContato from './Contact.vue'
   <div>
     <Navbar />
 
-    <main class="space-y-16">
+    <main>
       <SectionInicio />
       <SectionSobre />
       <SectionServicos />
