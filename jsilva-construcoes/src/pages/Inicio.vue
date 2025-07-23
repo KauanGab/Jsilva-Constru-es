@@ -1,10 +1,28 @@
 <template>
-  <section class="relative min-h-screen">
-    <div
-      class="relative h-[60vh] md:h-[70vh] bg-cover bg-center bg-no-repeat"
-      :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(\'${backgroundImage}\');`"
-    >
-      <div class="absolute inset-0 flex items-center justify-start px-6 md:px-12">
+  <section class="relative min-h-screen w-full">
+    <div class="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
+      <Carousel
+        :autoplay="4000"
+        :wrap-around="true"
+        :transition="1000"
+        :pauseAutoplayOnHover="false"
+        :mouseDrag="false"
+        :touchDrag="false"
+        class="h-full w-full"
+      >
+        <Slide v-for="(image, index) in images" :key="index" class="h-full w-full">
+          <div class="h-full w-full relative">
+            <img 
+              :src="image" 
+              :alt="`Slide ${index + 1}`"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+          </div>
+        </Slide>
+      </Carousel>
+      
+      <div class="absolute inset-0 flex items-center justify-start px-6 md:px-12 z-10">
         <div class="max-w-2xl text-white">
           <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
             Transformando projetos em realidade
@@ -114,17 +132,77 @@
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
+
 import posto1 from "../assets/posto1.png";
+import rosario1 from "../assets/rosario1.png";
+import aracaju from "../assets/aracaju.png";
+import laje from "../assets/laj2.png";
+import madeira from "../assets/madeira.png";
+
+
+
 
 export default {
   name: "Inicio",
+  components: {
+    Carousel,
+    Slide,
+  },
   data() {
     return {
-      backgroundImage: posto1,
+      images: [
+        posto1,
+        aracaju,
+        laje,
+        madeira,
+        rosario1,
+
+      ]
     };
-  },
+  }
 };
 </script>
 
 <style scoped>
+:deep(.carousel__viewport) {
+  height: 100%;
+  width: 100%;
+}
+
+:deep(.carousel__track) {
+  height: 100%;
+  width: 100%;
+}
+
+:deep(.carousel__slide) {
+  height: 100%;
+  width: 100%;
+}
+
+:deep(.carousel__prev),
+:deep(.carousel__next) {
+  display: none;
+}
+
+:deep(.carousel__pagination) {
+  display: none;
+}
+
+:deep(.carousel) {
+  margin: 0;
+  padding: 0;
+}
+</style>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
 </style>
