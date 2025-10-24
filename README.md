@@ -36,4 +36,4 @@ Este projeto foi criado para a empresa do meu pai e também visa ser um modelo *
 
 ### Hospedagem
 
-- Frontend: [Netlify](https://netlify.com/)
+- Frontend: [Vercel]
