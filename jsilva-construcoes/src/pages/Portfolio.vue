@@ -383,7 +383,8 @@ export default {
 
 .lightbox-container {
   position: relative;
-  max-width: 90vw;
+  width: 80vw;
+  max-width: 1000px;
   max-height: 90vh;
   background: white;
   border-radius: 20px;
@@ -399,8 +400,8 @@ export default {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
   z-index: 1001;
   display: flex;
@@ -415,7 +416,7 @@ export default {
 
 .lightbox-content {
   display: flex;
-  max-height: 90vh;
+  max-height: 80vh;
 }
 
 .lightbox-image {
@@ -528,10 +529,8 @@ export default {
   .lightbox-content {
     flex-direction: column;
   }
-
-  .lightbox-image {
-    max-width: 100%;
-  }
+  .lightbox-container { width: 95vw; border-radius: 12px; }
+  .lightbox-image { max-width: 100%; max-height: 50vh; width: 100%; object-fit: cover }
 
   .lightbox-info {
     padding: 1.5rem;

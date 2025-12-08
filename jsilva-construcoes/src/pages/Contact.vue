@@ -9,20 +9,20 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-xl shadow-2xl shadow-gray-300/50">
         <div>
           <h3 class="text-2xl font-bold text-[var(--primary)] mb-6">Envie sua Mensagem</h3>
-          <form class="space-y-6">
+          <form class="space-y-6" @submit.prevent="submitForm">
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-[var(--second)] focus:border-[var(--second)] transition duration-150" placeholder="Seu nome">
+              <input v-model="name" type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-[var(--second)] focus:border-[var(--second)] transition duration-150" placeholder="Seu nome">
             </div>
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-[var(--second)] focus:border-[var(--second)] transition duration-150" placeholder="seu.email@exemplo.com">
+              <input v-model="email" type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-[var(--second)] focus:border-[var(--second)] transition duration-150" placeholder="seu.email@exemplo.com">
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
-              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-[var(--second)] focus:border-[var(--second)] transition duration-150" placeholder="Descreva seu projeto ou dúvida"></textarea>
+              <textarea v-model="message" id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-[var(--second)] focus:border-[var(--second)] transition duration-150" placeholder="Descreva seu projeto ou dúvida"></textarea>
             </div>
-            <button type="submit" class="w-full bg-[var(--primary)] text-white font-semibold py-3 rounded-lg hover:bg-[var(--second)] transition duration-300 shadow-md">
+            <button :disabled="!canSend" type="submit" class="w-full bg-[var(--primary)] text-white font-semibold py-3 rounded-lg hover:bg-[var(--second)] transition duration-300 shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
               Enviar Mensagem
             </button>
           </form>
@@ -31,9 +31,9 @@
         <div>
           <h3 class="text-2xl font-bold text-[var(--primary)] mb-6">Canais Diretos</h3>
           <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="p-3 rounded-full bg-[var(--second)] text-white flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <div class="flex items-center gap-3">
+              <div class="p-3 rounded-full bg-[var(--second)] text-white flex-shrink-0 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </div>
               <div>
                 <p class="text-lg font-semibold text-gray-800">E-mail</p>
@@ -41,9 +41,9 @@
               </div>
             </div>
 
-            <div class="flex items-start gap-4">
-              <div class="p-3 rounded-full bg-[var(--second)] text-white flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.08 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div class="flex items-center gap-3">
+              <div class="p-3 rounded-full bg-[var(--second)] text-white flex-shrink-0 flex items-center justify-center">
+                <img src="../assets/whatsapp.svg" alt="WhatsApp" class="w-5 h-5" />
               </div>
               <div>
                 <p class="text-lg font-semibold text-gray-800">WhatsApp</p>
@@ -51,9 +51,9 @@
               </div>
             </div>
 
-            <div class="flex items-start gap-4">
-              <div class="p-3 rounded-full bg-[var(--second)] text-white flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="flex items-center gap-3">
+              <div class="p-3 rounded-full bg-[var(--second)] text-white flex-shrink-0 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
               <div>
                 <p class="text-lg font-semibold text-gray-800">Localização</p>
@@ -66,3 +66,26 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref, computed } from 'vue'
+
+const name = ref('')
+const email = ref('')
+const message = ref('')
+
+const canSend = computed(() => {
+  const e = email.value.trim()
+  const validEmail = /^\S+@\S+\.\S+$/.test(e)
+  return name.value.trim().length > 2 && validEmail && message.value.trim().length > 5
+})
+
+function submitForm() {
+  const subject = encodeURIComponent('Contato pelo site - ' + name.value.trim())
+  const body = encodeURIComponent(`Nome: ${name.value}%0D%0AEmail: ${email.value}%0D%0A%0D%0A${message.value}`)
+  window.location.href = `mailto:silvaconstrucoes69@gmail.com?subject=${subject}&body=${body}`
+  name.value = ''
+  email.value = ''
+  message.value = ''
+}
+</script>

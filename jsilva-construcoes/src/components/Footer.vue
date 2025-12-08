@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-[var(--primary)] text-white py-12 px-6">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
       <div>
         <h3 class="text-2xl font-bold mb-4 text-[var(--second)]">J. SILVA CONSTRUÇÕES</h3>
         <p class="text-sm opacity-90 mb-4">Atuando desde 2017 com foco em qualidade, pontualidade e inovação em obras residenciais, comerciais e de infraestrutura.</p>
@@ -18,17 +18,26 @@
         </ul>
       </div>
 
-      <div>
+      <div class="text-center md:text-left">
         <h4 class="text-xl font-semibold mb-4 border-b border-[var(--second)] pb-1 inline-block">Contato</h4>
-        <p class="text-sm mb-2">📧 <a href="mailto:silvaconstrucoes69@gmail.com" class="hover:text-[var(--second)] transition-colors duration-300">silvaconstrucoes69@gmail.com</a></p>
-        <p class="text-sm mb-6">📞 <a href="https://wa.me/5575992305197" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--second)] transition-colors duration-300">(75) 99230-5197 (WhatsApp)</a></p>
-        
-        <a href="https://wa.me/5575992305197?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20Por%20favor%2C%20me%20informem%20sobre%20prazos%20e%20valores." 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all duration-300 transform hover:scale-105">
-          Faça um orçamento
-        </a>
+        <div class="flex items-center justify-center md:justify-start gap-3 mb-2">
+          <Mail class="w-5 h-5 text-white" />
+          <a href="mailto:silvaconstrucoes69@gmail.com" class="hover:text-[var(--second)] transition-colors duration-300">silvaconstrucoes69@gmail.com</a>
+        </div>
+        <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+          <img src="../assets/whatsapp.svg" alt="WhatsApp" class="w-5 h-5" />
+          <a href="https://wa.me/5575992305197" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--second)] transition-colors duration-300">(75) 99230-5197 (WhatsApp)</a>
+        </div>
+
+        <div class="flex justify-center md:justify-start">
+          <a href="https://wa.me/5575992305197?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20Por%20favor%2C%20me%20informem%20sobre%20prazos%20e%20valores." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all duration-300 transform hover:scale-105">
+            <img src="../assets/whatsapp.svg" alt="WhatsApp" class="w-5 h-5" />
+            <span>Faça um orçamento</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -43,6 +52,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { Mail } from 'lucide-vue-next'
 </script>
 
 <style scoped>
