@@ -4,15 +4,11 @@
     <div class="portfolio-header">
       <h2 class="portfolio-title">Portfólio de Obras</h2>
       <p class="portfolio-subtitle">Veja abaixo algumas das obras realizadas por nossa equipe.</p>
-      
+
       <!-- Filtros de categoria -->
       <div class="filter-buttons">
-        <button 
-          v-for="category in categories" 
-          :key="category"
-          :class="['filter-btn', { active: activeFilter === category }]"
-          @click="filterProjects(category)"
-        >
+        <button v-for="category in categories" :key="category"
+          :class="['filter-btn', { active: activeFilter === category }]" @click="filterProjects(category)">
           {{ category }}
         </button>
       </div>
@@ -20,21 +16,10 @@
 
     <!-- Grid da galeria -->
     <div class="gallery-grid" ref="galleryGrid">
-      <div 
-        v-for="(project, index) in filteredProjects" 
-        :key="project.id"
-        :class="['gallery-item', `item-${index}`]"
-        @click="openLightbox(index)"
-        @mouseenter="animateHover($event, true)"
-        @mouseleave="animateHover($event, false)"
-      >
+      <div v-for="(project, index) in filteredProjects" :key="project.id" :class="['gallery-item', `item-${index}`]"
+        @click="openLightbox(index)" @mouseenter="animateHover($event, true)" @mouseleave="animateHover($event, false)">
         <div class="image-container">
-          <img 
-            :src="project.image" 
-            :alt="project.title"
-            class="gallery-image"
-            loading="lazy"
-          />
+          <img :src="project.image" :alt="project.title" class="gallery-image" loading="lazy" />
           <div class="image-overlay">
             <div class="overlay-content">
               <h3 class="project-title">{{ project.title }}</h3>
@@ -58,13 +43,9 @@
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
-        
+
         <div class="lightbox-content">
-          <img 
-            :src="currentProject.image" 
-            :alt="currentProject.title"
-            class="lightbox-image"
-          />
+          <img :src="currentProject.image" :alt="currentProject.title" class="lightbox-image" />
           <div class="lightbox-info">
             <h3 class="lightbox-title">{{ currentProject.title }}</h3>
             <p class="lightbox-category">{{ currentProject.category }}</p>
@@ -75,7 +56,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Navegação -->
         <button class="lightbox-nav prev" @click="previousImage" v-if="currentIndex > 0">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -93,6 +74,14 @@
 </template>
 
 <script>
+
+import posto1 from "../assets/posto1.png";
+import rosario1 from "../assets/rosario1.png";
+import aracaju from "../assets/aracaju.png";
+import laje from "../assets/laj2.png";
+import madeira from "../assets/madeira2.png";
+import piscina from "../assets/piscina1.png";
+
 export default {
   name: 'Portfolio',
   data() {
@@ -100,61 +89,62 @@ export default {
       activeFilter: 'Todos',
       lightboxOpen: false,
       currentIndex: 0,
-      categories: ['Todos', 'Residencial', 'Comercial', 'Industrial', 'Reforma'],
+      categories: ['Todos', 'Residencial', 'Comercial', 'Reforma', 'Infraestrutura'],
       projects: [
         {
           id: 1,
-          title: 'Casa Moderna Alphaville',
-          category: 'Residencial',
-          image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop',
-          description: 'Projeto residencial moderno com arquitetura contemporânea e acabamentos de alto padrão.',
-          date: '2024',
-          location: 'São Paulo, SP'
+          title: 'Posto Santo Antônio',
+          category: 'Comercial',
+          image: posto1,
+          description: 'Projeto Comercial moderno com arquitetura contemporânea e acabamentos de alto padrão.',
+          date: '2023',
+          location: 'Canudos, BA'
         },
         {
           id: 2,
-          title: 'Edifício Corporativo',
-          category: 'Comercial',
-          image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop',
-          description: 'Complexo comercial com design sustentável e tecnologia de ponta.',
+          title: 'Pavimentação do Povoado Rosário',
+          category: 'Infraestrutura',
+          image: rosario1,
+          description: 'Obra de calçamento executada com qualidade e responsabilidade, garantindo mais mobilidade e desenvolvimento para a comunidade local.',
           date: '2023',
-          location: 'Rio de Janeiro, RJ'
-        },
+          location: 'Povoado Rosário, Canudos - BA'
+        }
+        ,
         {
           id: 3,
-          title: 'Galpão Industrial',
-          category: 'Industrial',
-          image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop',
-          description: 'Instalação industrial com foco em eficiência operacional e segurança.',
-          date: '2024',
-          location: 'Campinas, SP'
+          title: 'Calçadão da Praia Formosa',
+          category: 'Infraestrutura',
+          image: aracaju,
+          description: 'Execução de calçadão com estrutura moderna e durável, contribuindo para a urbanização e valorização da orla.',
+          date: '2021',
+          location: 'Praia Formosa, Aracaju - SE'
         },
         {
           id: 4,
-          title: 'Apartamento Reformado',
+          title: 'Construção de Laje Residencial',
           category: 'Reforma',
-          image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop',
-          description: 'Reforma completa de apartamento com conceito aberto e design minimalista.',
+          image: laje,
+          description: 'Execução de laje em residência, garantindo estrutura segura, resistente e preparada para futuras ampliações.',
           date: '2024',
-          location: 'Belo Horizonte, MG'
+          location: 'Canudos, BA'
         },
         {
           id: 5,
-          title: 'Shopping Center',
+          title: 'Estrutura de Pergolado em Madeira',
           category: 'Comercial',
-          image: 'https://images.unsplash.com/photo-1555636222-cae831e670b3?w=800&h=600&fit=crop',
-          description: 'Centro comercial com arquitetura inovadora e espaços de convivência.',
+          image: madeira,
+          description: 'Construção de pergolado em madeira com acabamento de qualidade, ideal para áreas externas e espaços de convivência.',
           date: '2023',
-          location: 'Brasília, DF'
+          location: 'Canudos, BA'
         },
         {
           id: 6,
-          title: 'Condomínio Residencial',
+          title: 'Piscina Escolar',
           category: 'Residencial',
-          image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop',
-          description: 'Conjunto habitacional com áreas verdes e infraestrutura completa.',
+          image: piscina,
+          description: 'Estrutura de piscina construída para unidade escolar, oferecendo espaço adequado para atividades esportivas e recreativas.',
           date: '2023',
-          location: 'Curitiba, PR'
+          location: 'Canudos, BA'
         }
       ]
     }
@@ -180,38 +170,38 @@ export default {
         this.animateGalleryEntrance();
       });
     },
-    
+
     openLightbox(index) {
       this.currentIndex = index;
       this.lightboxOpen = true;
       document.body.style.overflow = 'hidden';
     },
-    
+
     closeLightbox() {
       this.lightboxOpen = false;
       document.body.style.overflow = 'auto';
     },
-    
+
     nextImage() {
       if (this.currentIndex < this.filteredProjects.length - 1) {
         this.currentIndex++;
       }
     },
-    
+
     previousImage() {
       if (this.currentIndex > 0) {
         this.currentIndex--;
       }
     },
-    
+
     animateGalleryEntrance() {
       const items = this.$refs.galleryGrid?.querySelectorAll('.gallery-item');
       if (!items) return;
-      
+
       items.forEach((item, index) => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(50px) scale(0.9)';
-        
+
         setTimeout(() => {
           item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
           item.style.opacity = '1';
@@ -219,12 +209,12 @@ export default {
         }, index * 100);
       });
     },
-    
+
     animateHover(event, isEntering) {
       const item = event.currentTarget;
       const image = item.querySelector('.gallery-image');
       const overlay = item.querySelector('.image-overlay');
-      
+
       if (isEntering) {
         item.style.transform = 'translateY(-10px)';
         item.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
@@ -297,7 +287,7 @@ export default {
 
 .filter-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .filter-btn.active {
@@ -318,7 +308,7 @@ export default {
   border-radius: 20px;
   overflow: hidden;
   background: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
@@ -499,16 +489,22 @@ export default {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(50px) scale(0.9);
   }
-  to { 
+
+  to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
@@ -519,32 +515,32 @@ export default {
   .portfolio-section {
     padding: 2rem 1rem;
   }
-  
+
   .portfolio-title {
     font-size: 2.5rem;
   }
-  
+
   .gallery-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .lightbox-content {
     flex-direction: column;
   }
-  
+
   .lightbox-image {
     max-width: 100%;
   }
-  
+
   .lightbox-info {
     padding: 1.5rem;
   }
-  
+
   .filter-buttons {
     gap: 0.5rem;
   }
-  
+
   .filter-btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
