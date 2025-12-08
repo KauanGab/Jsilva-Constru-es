@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white py-16 px-6">
+  <section id="contato" class="bg-white py-16 px-6">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-4xl font-bold text-blue-800 mb-6">Entre em Contato</h2>
       <p class="text-lg text-gray-700 mb-10">
@@ -7,10 +7,10 @@
       </p>
       <div class="space-y-4 text-left text-gray-700 text-lg">
         <p class="flex items-center justify-center gap-2">
-          📧 <span>contato@jsilvaconstrucoes.com.br</span>
+          📧 <span>silvaconstrucoes69@gmail.com</span>
         </p>
         <p class="flex items-center justify-center gap-2">
-          📞 <span>(99) 99999-9999</span>
+          📞 <a href="https://wa.me/5575992305197" target="_blank" rel="noopener noreferrer">(75) 99230-5197 (WhatsApp)</a>
         </p>
       </div>
     </div>

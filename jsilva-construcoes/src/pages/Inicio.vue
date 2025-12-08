@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen w-full">
+  <section id="inicio" class="relative min-h-screen w-full">
     <div class="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
       <Carousel :autoplay="4000" :wrap-around="true" :transition="1000" :pauseAutoplayOnHover="false" :mouseDrag="false"
         :touchDrag="false" class="h-full w-full">
@@ -19,10 +19,11 @@
           <p class="text-lg md:text-xl mb-8 opacity-90">
             Oferecemos as mais completas e eficientes soluções
           </p>
-          <button
+          <a href="https://wa.me/5575992305197?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20projeto%20de%20constru%C3%A7%C3%A3o%2Freforma.%20Poderiam%2C%20por%20favor%2C%20me%20orientar%20sobre%20prazos%20e%20valores%3F%20Obrigado%21"
+            target="_blank" rel="noopener noreferrer"
             class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-md transition duration-300 uppercase tracking-wide">
             Solicite um orçamento
-          </button>
+          </a>
         </div>
       </div>
     </div>

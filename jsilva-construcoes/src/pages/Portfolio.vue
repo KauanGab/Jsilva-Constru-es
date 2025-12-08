@@ -1,5 +1,5 @@
 <template>
-  <section class="portfolio-section">
+  <section id="portfolio" class="portfolio-section">
     <!-- Header da seção -->
     <div class="portfolio-header">
       <h2 class="portfolio-title">Portfólio de Obras</h2>

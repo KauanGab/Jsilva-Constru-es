@@ -1,5 +1,5 @@
 <template>
-  <section class="bgz-gray-50 py-16 px-6">
+  <section id="sobre" class="bgz-gray-50 py-16 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-4xl font-bold text-blue-800 mb-4">Sobre a Empresa</h2>
       <p class="text-lg text-gray-700 leading-relaxed">

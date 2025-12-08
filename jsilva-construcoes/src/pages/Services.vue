@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gray-50 py-12 px-6 md:px-16">
+  <section id="servicos" class="bg-gray-50 py-12 px-6 md:px-16">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-4xl font-bold text-blue-800 mb-6">Nossos Serviços</h2>
       <p class="text-gray-600 text-lg mb-10">Oferecemos soluções completas com qualidade, eficiência e compromisso.</p>

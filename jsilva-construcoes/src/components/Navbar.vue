@@ -7,23 +7,23 @@
     </div>
 
     <div class="flex gap-4 text-white">
-      <RouterLink to="/inicio"
+      <RouterLink :to="{ path: '/', hash: '#inicio' }"
         class="text-white no-underline hover:text-[var(--second)] px-3 py-2 rounded-md text-sm font-medium">
         Início
       </RouterLink>
-      <RouterLink to="/about"
+      <RouterLink :to="{ path: '/', hash: '#sobre' }"
         class="text-white no-underline hover:text-[var(--second)] px-3 py-2 rounded-md text-sm font-medium">
         Sobre
       </RouterLink>
-      <RouterLink to="/services"
+      <RouterLink :to="{ path: '/', hash: '#servicos' }"
         class="text-white no-underline hover:text-[var(--second)] px-3 py-2 rounded-md text-sm font-medium">
         Serviços
       </RouterLink>
-      <RouterLink to="/portfolio"
+      <RouterLink :to="{ path: '/', hash: '#portfolio' }"
         class="text-white no-underline hover:text-[var(--second)] px-3 py-2 rounded-md text-sm font-medium">
         Portfólio
       </RouterLink>
-      <RouterLink to="/contact"
+      <RouterLink :to="{ path: '/', hash: '#contato' }"
         class="text-white no-underline hover:text-[var(--second)] px-3 py-2 rounded-md text-sm font-medium">
         Contatos
       </RouterLink>
