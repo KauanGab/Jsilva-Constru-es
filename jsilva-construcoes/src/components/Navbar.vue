@@ -2,12 +2,12 @@
   <nav class="bg-[var(--primary)] flex justify-between items-center">
     <div>
       <RouterLink to="/">
-        <img src="../assets/jsilva_logo.png" alt="Jsilva Construções Logo" style="height: 70px; width: auto;">
+        <img src="../assets/jsilva_logo.png" alt="Jsilva Construções Logo" style="height: 55px; width: auto;">
       </RouterLink>
     </div>
 
     <div class="flex gap-4 text-white">
-      <RouterLink to="#inicio"
+      <RouterLink to="/inicio"
         class="text-white no-underline hover:text-[var(--second)] px-3 py-2 rounded-md text-sm font-medium">
         Início
       </RouterLink>

@@ -7,17 +7,17 @@
         <li class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
           <div class="text-4xl mb-4">🏠</div>
           <h3 class="text-xl font-semibold text-blue-700 mb-2">Construção e Reforma</h3>
-          <p class="text-gray-600">Projetos residenciais e comerciais com foco em segurança e durabilidade.</p>
+          <p class="text-gray-600">Do planejamento à entrega, realizamos obras com excelência, durabilidade e total compromisso com o cliente.</p>
         </li>
         <li class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
           <div class="text-4xl mb-4">🧱</div>
           <h3 class="text-xl font-semibold text-blue-700 mb-2">Alvenaria e Acabamento</h3>
-          <p class="text-gray-600">Serviços de qualidade em cada detalhe, desde a base até o acabamento.</p>
+          <p class="text-gray-600">Trabalhos de alvenaria e acabamento feitos com precisão para resultados elegantes e resistentes.</p>
         </li>
         <li class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
           <div class="text-4xl mb-4">🔌</div>
           <h3 class="text-xl font-semibold text-blue-700 mb-2">Elétrica e Hidráulica</h3>
-          <p class="text-gray-600">Instalações seguras e eficientes para o pleno funcionamento da sua obra.</p>
+          <p class="text-gray-600">Instalações seguras e eficientes que garantem o melhor desempenho da sua construção.</p>
         </li>
       </ul>
     </div>
