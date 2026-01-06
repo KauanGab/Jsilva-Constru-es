@@ -74,7 +74,7 @@
         <div class="flex justify-center md:justify-start">
           <a href="https://wa.me/5575992305197?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20Por%20favor%2C%20me%20informem%20sobre%20prazos%20e%20valores."
             target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-3 bg-second hover:brightness-90 text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all duration-300 transform hover:scale-105">
+            class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all duration-300 transform hover:scale-105">
             <img src="../assets/whatsapp.svg" alt="WhatsApp" class="w-5 h-5" />
             <span>Faça um orçamento</span>
           </a>
