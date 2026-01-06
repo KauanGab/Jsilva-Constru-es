@@ -236,7 +236,7 @@ export default {
   padding: 4rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #fbfdff 0%, #eef6fc 100%);
   min-height: 100vh;
 }
 
@@ -248,7 +248,7 @@ export default {
 .portfolio-title {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--primary);
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -274,9 +274,9 @@ export default {
 
 .filter-btn {
   padding: 0.75rem 1.5rem;
-  border: 2px solid #e2e8f0;
+  border: 2px solid rgba(10,61,124,0.12);
   background: white;
-  color: #64748b;
+  color: var(--primary);
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
@@ -291,7 +291,7 @@ export default {
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--second) 100%);
   color: white;
   border-color: transparent;
 }
@@ -332,7 +332,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(10,61,124,0.88) 0%, rgba(193,39,45,0.88) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   display: flex;
@@ -350,12 +350,14 @@ export default {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 .project-category {
   font-size: 1rem;
   opacity: 0.9;
   margin-bottom: 1rem;
+  color: rgba(255,255,255,0.9);
 }
 
 .project-details {
@@ -436,12 +438,12 @@ export default {
 .lightbox-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
 .lightbox-category {
-  color: #667eea;
+  color: var(--second);
   font-weight: 600;
   margin-bottom: 1rem;
 }

@@ -37,7 +37,7 @@
               </div>
               <div>
                 <p class="text-lg font-semibold text-gray-800">E-mail</p>
-                <a href="mailto:silvaconstrucoes69@gmail.com" class="text-gray-600 hover:text-second transition duration-150">silvaconstrucoes69@gmail.com</a>
+                <a href="mailto:silvaconstrucoes69@gmail.com" class="text-gray-600 hover:text-second transition duration-150 p-0">silvaconstrucoes69@gmail.com</a>
               </div>
             </div>
 
@@ -47,7 +47,7 @@
               </div>
               <div>
                 <p class="text-lg font-semibold text-gray-800">WhatsApp</p>
-                <a href="https://wa.me/5575992305197" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-second transition duration-150">(75) 99230-5197</a>
+                <a href="https://wa.me/5575992305197" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-second transition duration-150 p-0">(75) 99230-5197</a>
               </div>
             </div>
 
