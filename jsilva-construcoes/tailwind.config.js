@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1E3A8A',
-        second: '#F97316', 
-        third: '#4a527a', 
+        // Paleta sincronizada com a logo (azul principal e vermelho tijolo)
+        primary: '#0A3D7C',
+        second: '#C1272D',
+        third: '#4a527a',
       }
     },
   },
