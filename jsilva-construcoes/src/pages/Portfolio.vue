@@ -45,6 +45,125 @@
       </div>
     </div>
 
+    <section id="posto-santo-antonio-escritorios" class="mt-20 scroll-mt-8">
+      <div class="overflow-hidden rounded-3xl border border-primary/10 bg-white shadow-xl">
+        <div class="bg-gradient-to-r from-primary to-[#174f8c] px-6 py-10 text-white md:px-10 md:py-12">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/75">
+            Projeto comercial · Canudos, BA
+          </p>
+          <h3 class="max-w-3xl text-3xl font-bold leading-tight md:text-4xl">
+            Continuação das obras do Posto Santo Antônio
+          </h3>
+          <p class="mt-3 text-lg font-medium text-white/85">Construção de escritórios</p>
+          <p class="mt-4 max-w-2xl text-sm leading-6 text-white/80 md:text-base">
+            Confira detalhes dos ambientes e acabamentos desta etapa da obra, além de acompanhar o projeto em vídeo.
+          </p>
+        </div>
+
+        <div class="grid gap-8 p-5 md:p-8 lg:grid-cols-[minmax(240px,0.8fr)_minmax(0,2fr)]">
+          <div class="flex flex-col items-center rounded-2xl bg-slate-950 p-5 text-center text-white shadow-lg">
+            <div class="mb-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Vídeo da obra</p>
+              <h4 class="mt-2 text-xl font-semibold">Veja a construção de perto</h4>
+            </div>
+            <div class="w-full max-w-[320px] overflow-hidden rounded-xl bg-black shadow-2xl">
+              <div class="aspect-[9/16]">
+                <iframe
+                  class="h-full w-full"
+                  src="https://www.youtube.com/embed/zPnn6fupYfQ"
+                  title="Continuação das obras do Posto Santo Antônio — construção de escritórios"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <a
+              class="mt-4 text-sm font-medium text-white/75 underline decoration-white/40 underline-offset-4 transition hover:text-white"
+              href="https://www.youtube.com/shorts/zPnn6fupYfQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir vídeo no YouTube
+            </a>
+          </div>
+
+          <div class="grid content-start gap-4 sm:grid-cols-2">
+            <button
+              v-for="(photo, index) in officePhotos"
+              :key="photo.src"
+              type="button"
+              class="group overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/30"
+              :aria-label="`Ampliar foto: ${photo.caption}`"
+              @click="openOfficeLightbox(index)"
+            >
+              <div class="aspect-[4/3] overflow-hidden bg-slate-100">
+                <img
+                  :src="photo.src"
+                  :alt="photo.caption"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <span class="block px-4 py-3 text-sm font-medium text-slate-700">{{ photo.caption }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      v-if="officeLightboxOpen"
+      class="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4"
+      role="dialog"
+      aria-modal="true"
+      :aria-label="officePhotos[officePhotoIndex].caption"
+      @click="closeOfficeLightbox"
+    >
+      <div class="relative flex max-h-[90vh] w-full max-w-5xl flex-col items-center" @click.stop>
+        <button
+          type="button"
+          class="absolute right-0 top-0 z-10 rounded-full bg-black/60 p-3 text-white transition hover:bg-black/80"
+          aria-label="Fechar foto ampliada"
+          @click="closeOfficeLightbox"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <img
+          :src="officePhotos[officePhotoIndex].src"
+          :alt="officePhotos[officePhotoIndex].caption"
+          class="max-h-[78vh] max-w-full rounded-xl object-contain"
+        />
+        <p class="mt-4 text-center font-medium text-white">{{ officePhotos[officePhotoIndex].caption }}</p>
+        <button
+          v-if="officePhotoIndex > 0"
+          type="button"
+          class="absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-3 text-white transition hover:bg-black/80"
+          aria-label="Ver foto anterior"
+          @click="previousOfficePhoto"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="15,18 9,12 15,6" />
+          </svg>
+        </button>
+        <button
+          v-if="officePhotoIndex < officePhotos.length - 1"
+          type="button"
+          class="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-3 text-white transition hover:bg-black/80"
+          aria-label="Ver próxima foto"
+          @click="nextOfficePhoto"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="9,18 15,12 9,6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <div v-if="lightboxOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
       @click="closeLightbox">
       <div class="relative w-11/12 md:max-w-4xl max-h-[90vh] bg-white rounded-xl overflow-hidden" @click.stop>
@@ -101,6 +220,10 @@ import posto1 from "../assets/posto1.png"
 import rosario1 from "../assets/rosario1.png"
 import aracaju from "../assets/aracaju.png"
 import casa2 from "../assets/casa2.png"
+import officeFacade from "../assets/fotos  da empresa de pai/Fachada moderna do Posto Santo Antônio.png"
+import officeKitchen from "../assets/fotos  da empresa de pai/Canto de cozinha limpo e moderno.png"
+import officeStairs from "../assets/fotos  da empresa de pai/Escadaria de Granito Rumo à Luz.png"
+import officeWalkway from "../assets/fotos  da empresa de pai/Varanda Moderna com Vista Urbana.png"
 
 export default {
   name: "Portfolio",
@@ -109,6 +232,14 @@ export default {
       activeFilter: "Todos",
       lightboxOpen: false,
       currentIndex: 0,
+      officeLightboxOpen: false,
+      officePhotoIndex: 0,
+      officePhotos: [
+        { src: officeFacade, caption: "Fachada do Posto Santo Antônio" },
+        { src: officeStairs, caption: "Acabamento da escadaria em granito" },
+        { src: officeWalkway, caption: "Varanda e circulação dos escritórios" },
+        { src: officeKitchen, caption: "Detalhe do espaço interno" }
+      ],
       categories: ["Todos", "Residencial", "Comercial", "Reforma", "Infraestrutura"],
       projects: [
         {
@@ -202,6 +333,25 @@ export default {
     closeLightbox() {
       this.lightboxOpen = false
       document.body.style.overflow = "auto"
+    },
+    openOfficeLightbox(index) {
+      this.officePhotoIndex = index
+      this.officeLightboxOpen = true
+      document.body.style.overflow = "hidden"
+    },
+    closeOfficeLightbox() {
+      this.officeLightboxOpen = false
+      document.body.style.overflow = this.lightboxOpen ? "hidden" : "auto"
+    },
+    nextOfficePhoto() {
+      if (this.officePhotoIndex < this.officePhotos.length - 1) {
+        this.officePhotoIndex++
+      }
+    },
+    previousOfficePhoto() {
+      if (this.officePhotoIndex > 0) {
+        this.officePhotoIndex--
+      }
     },
     nextImage() {
       if (this.currentIndex < this.filteredProjects.length - 1) {
